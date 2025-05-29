@@ -77,7 +77,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     );
                     if (usuarioValido != null){
                       context.push('/home',extra: usuarioValido);
-
                     }
                     else{
                       

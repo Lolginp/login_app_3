@@ -9,7 +9,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Email: ${usuario.nameUser}'),
+            Text('Dirección: ${usuario.direccion}'),
+          ],
+        ),
+      ),
     );
   }
 }
