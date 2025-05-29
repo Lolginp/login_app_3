@@ -62,6 +62,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(                       //Boton de ingreso, depende de cual sea la infromación que le entre de los inputController, este enviara un mensaje de ingreso correcto o de ingreso incorrectos
+                onPressed: () {
+                  setState(() {
+                    inputContra = inputControllerC.text;
+                    inputUsuar = inputControllerU.text;
+                    if (inputContra == 'contraseña' && inputUsuar == 'lolo') {
+
+                    } else {
+
+                    }
+                  });
+                }
               )
             ],
         ),
