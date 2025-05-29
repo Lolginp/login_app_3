@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:login_app_3/Objeto/Usuario_obj.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String name = 'login';
@@ -16,6 +18,13 @@ class _LoginScreenState extends State<LoginScreen> {
   IconData visible = Icons.visibility;
   IconData novisible = Icons.visibility_off;
   bool contrasenanovis = true;
+
+  List<Usuario> usuarios =[
+    Usuario(userEmail: '@lolito.com', password: 'hola', nameUser: 'lolin', direccion: 'calumbas 3'),
+    Usuario(userEmail: '@tinsi.com', password: 'chau', nameUser: 'tinsi', direccion: 'cataluña 120'),
+    Usuario(userEmail: '@emis.com', password: 'saludos', nameUser: 'emin', direccion: 'cafu 430'),
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +72,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   setState(() {
                     inputContra = inputControllerC.text;
                     inputUsuar = inputControllerU.text;
-                    if (inputContra == 'contraseña' && inputUsuar == 'lolo') {
+                    Usuario usuarioValido = usuarios.firstWhere(
+                      (usuario)=> usuario.userEmail == inputUsuar && usuario.password == inputContra,
+                    );
+                    if (usuarioValido != null){
+                      context.push('/home',extra: usuarioValido);
 
-                    } else {
-
+                    }
+                    else{
+                      
                     }
                   });
                 },
