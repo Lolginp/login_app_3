@@ -1,6 +1,7 @@
 
 
 import 'package:go_router/go_router.dart';
+import 'package:login_app_3/Objeto/Usuario_obj.dart';
 import 'package:login_app_3/Presentation/Screens/home.dart';
 import 'package:login_app_3/Presentation/Screens/login.dart';
 
@@ -10,7 +11,7 @@ routes: [
   GoRoute(
     name: HomeScreen.name,
     path: '/home',
-    builder: (context, state) => HomeScreen(userName: state.extra as String),
+    builder: (context, state) => HomeScreen(usuario: state.extra as Usuario),
   ),
   GoRoute(
     name: 'Login',

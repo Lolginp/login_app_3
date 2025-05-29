@@ -10,17 +10,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController inputControllerC = TextEditingController();
-
   TextEditingController inputControllerU = TextEditingController();
-
   String inputContra = '';
-
   String inputUsuar = '';
-
   IconData visible = Icons.visibility;
-
   IconData novisible = Icons.visibility_off;
-
   bool contrasenanovis = true;
 
   @override
@@ -75,7 +69,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     }
                   });
-                }
+                },
+                child: Text('ingresar'),
               )
             ],
         ),
